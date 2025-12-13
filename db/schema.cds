@@ -286,7 +286,9 @@ entity poitem : primary {
 
   @title : 'PO ID'
   @Common.Label : 'PO ID'
-  @mandatory
+
+
+  @mandatory // This field is required and must be provided
   key po_id : UUID not null;
 
   @title : 'Line Item Number'
@@ -323,7 +325,7 @@ entity poitem : primary {
   @assert.range : [ 0, 9999999 ]
   po_item_netprice : Integer;
 
-  @title : 'Discount'
+  @title : 'Net Price'
   @Common.Label : 'Discount'
   @assert.range : [ 0, 100 ]
   po_item_discount : Integer default 0;
